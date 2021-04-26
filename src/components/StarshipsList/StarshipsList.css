@@ -11,8 +11,13 @@ h1 {
   font-size: 30px;
 }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 .starship-list {
-  width: 600px;
+  width: 900px;
   padding: 40px 30px;
   border: 1px solid white;
   display: flex;
