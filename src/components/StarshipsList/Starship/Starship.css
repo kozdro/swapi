@@ -23,3 +23,7 @@ td {
   font-weight: bold;
   margin-left: 20px;
 }
+
+.add-btn:hover {
+  color: white;
+}

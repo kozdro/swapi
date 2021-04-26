@@ -17,9 +17,8 @@ table {
 }
 
 .starship-list {
-  width: 900px;
+  max-width: 1000px;
   padding: 40px 30px;
-  border: 1px solid white;
   display: flex;
   flex-direction: column;
   color: white;
