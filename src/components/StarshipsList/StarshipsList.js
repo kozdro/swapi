@@ -8,12 +8,14 @@ export default function StarshipList() {
       <div className="starship-list">
         <table bordercolor="white" frame="void" rules="rows">
           <colgroup span="4"></colgroup>
-          <tr>
-            <th>Starship name</th>
-            <th>Manufacturer</th>
-            <th>Price</th>
-            <th>Quantity</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Starship name</th>
+              <th>Manufacturer</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
           <Starship />
         </table>
       </div>
