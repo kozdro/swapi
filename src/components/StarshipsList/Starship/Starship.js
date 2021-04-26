@@ -1,40 +1,32 @@
+import { useEffect, useState } from "react";
 import "./Starship.css";
 
+const api = "https://swapi.dev/api/starships/";
+
 export default function Starship() {
+  const [starships, setStarships] = useState([]);
+
+  useEffect(() => {
+    fetch(api)
+      .then((res) => res.json())
+      .then((data) => {
+        setStarships(data.results);
+      });
+  }, []);
+
   return (
-    <>
-      <tr>
-        <td>statek1</td>
-        <td>producent</td>
-        <td>cena</td>
-        <td>
-          <input type="number" />
-        </td>
-      </tr>
-      <tr>
-        <td>statek1</td>
-        <td>producent</td>
-        <td>cena</td>
-        <td>
-          <input type="number" />
-        </td>
-      </tr>
-      <tr>
-        <td>statek1</td>
-        <td>producent</td>
-        <td>cena</td>
-        <td>
-          <input type="number" />
-        </td>
-      </tr>
-      <tr>
-        <td>statek1</td>
-        <td>producent</td>
-        <td>cena</td>
-        <td>
-          <input type="number" />
-        </td>
-      </tr>
-    </>
+    <tbody>
+      {starships.map((starship) => (
+        <tr>
+          <td>{starship.name}</td>
+          <td>{starship.manufacturer}</td>
+          <td>{starship.cost_in_credits}</td>
+          <td>
+            <input className="input" type="number" />
+            <button className="add-btn">Add</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
   );
 }
