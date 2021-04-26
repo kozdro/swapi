@@ -1,0 +1,16 @@
+tr {
+  text-align: center;
+}
+
+td {
+  color: yellow;
+  padding: 15px 0;
+}
+
+td input {
+  width: 50px;
+  background-color: black;
+  color: yellow;
+  border: 1px solid yellow;
+  font-size: 1rem;
+}
