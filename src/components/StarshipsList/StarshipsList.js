@@ -18,7 +18,7 @@ export default function StarshipList(props) {
           </thead>
           <Starship
             starships={props.starships}
-            onClick={props.handleClick}
+            onClick={props.onClick}
           />
         </table>
       </div>

@@ -11,7 +11,7 @@ function Starship(props) {
           <td>{manufacturer}</td>
           <td>{cost_in_credits}</td>
           <td>
-            <Input onClick={props.handleClick} />
+            <Input onClick={props.onClick} />
           </td>
         </tr>
       ))}
