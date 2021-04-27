@@ -9,10 +9,19 @@ function Starship(props) {
         <tr key={url}>
           <td>{name}</td>
           <td>{manufacturer}</td>
-          <td>{cost_in_credits}</td>
-          <td>
-            <Input onClick={props.onClick} />
-          </td>
+          {Object.values(cost_in_credits).includes("u") ? (
+            <>
+              <td>{cost_in_credits}</td>
+              <td>not available</td>
+            </>
+          ) : (
+            <>
+              <td>{cost_in_credits}</td>
+              <td>
+                <Input onClick={props.onClick} />
+              </td>
+            </>
+          )}
         </tr>
       ))}
     </tbody>
