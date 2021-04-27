@@ -2,7 +2,7 @@ import { Component } from "react";
 
 class Input extends Component {
   state = {
-    value: "",
+    value: null,
   };
 
   handleChange = (e) => {
@@ -22,7 +22,7 @@ class Input extends Component {
           min="0"
         />
         <button
-          onClick={() => this.props.onClick(this.state.value)}
+          onClick={() => this.props.onClick(parseInt(this.state.value))}
           className="add-btn"
         >
           Add
