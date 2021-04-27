@@ -2,7 +2,7 @@ import { Component } from "react";
 
 class Input extends Component {
   state = {
-    value: null,
+    value: "",
   };
 
   handleChange = (e) => {
