@@ -7,7 +7,7 @@ const api = "https://swapi.dev/api/starships/";
 class App extends Component {
   state = {
     starships: [],
-    quantity: 0,
+    quantity: 0
   };
 
   componentDidMount() {
@@ -22,9 +22,9 @@ class App extends Component {
 
   handleClick = (i) => {
     this.setState({
-      quantity: i
-    })
-  }
+      quantity: parseInt(this.state.quantity + i),
+    });
+  };
 
   render() {
     const { starships, quantity } = this.state;
@@ -32,10 +32,7 @@ class App extends Component {
     return (
       <>
         <Header quantity={quantity} />
-        <StarshipsList
-          starships={starships}
-          onClick={this.handleClick}
-        />
+        <StarshipsList starships={starships} onClick={this.handleClick} />
       </>
     );
   }
