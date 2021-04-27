@@ -1,7 +1,7 @@
 import Starship from "./Starship/Starship";
 import "./StarshipsList.css";
 
-export default function StarshipList() {
+export default function StarshipList(props) {
   return (
     <div className="main">
       <h1>Starships List</h1>
@@ -16,7 +16,10 @@ export default function StarshipList() {
               <th>Quantity</th>
             </tr>
           </thead>
-          <Starship />
+          <Starship
+            starships={props.starships}
+            onClick={props.handleClick}
+          />
         </table>
       </div>
     </div>
