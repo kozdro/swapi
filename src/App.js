@@ -1,41 +1,32 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import StarshipsList from "./components/StarshipsList/StarshipsList";
 import "./App.css";
 
 const api = "https://swapi.dev/api/starships/";
-class App extends Component {
-  state = {
-    starships: [],
-    quantity: 0
-  };
 
-  componentDidMount() {
+function App() {
+  const [starships, setStarships] = useState([]);
+  const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
     fetch(api)
       .then((res) => res.json())
       .then((data) => {
-        this.setState({
-          starships: data.results,
-        });
+        setStarships(data.results);
       });
-  }
+  }, []);
 
-  handleClick = (i) => {
-    this.setState({
-      quantity: parseInt(this.state.quantity + i),
-    });
+  const handleClick = (i) => {
+    setQuantity(parseInt(quantity + i));
   };
 
-  render() {
-    const { starships, quantity } = this.state;
-
-    return (
-      <>
-        <Header quantity={quantity} />
-        <StarshipsList starships={starships} onClick={this.handleClick} />
-      </>
-    );
-  }
+  return (
+    <>
+      <Header quantity={quantity} />
+      <StarshipsList starships={starships} onClick={handleClick} />
+    </>
+  );
 }
 
 export default App;

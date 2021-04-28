@@ -1,35 +1,29 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class Input extends Component {
-  state = {
-    value: "",
+function Input(props) {
+  const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
-  handleChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
-
-  render() {
-    return (
-      <>
-        <input
-          onChange={this.handleChange}
-          value={this.state.value}
-          className="input"
-          type="number"
-          min="0"
-        />
-        <button
-          onClick={() => this.props.onClick(parseInt(this.state.value))}
-          className="add-btn"
-        >
-          Add
-        </button>
-      </>
-    );
-  }
+  return (
+    <>
+      <input
+        onChange={handleChange}
+        value={value}
+        className="input"
+        type="number"
+        min="0"
+      />
+      <button
+        onClick={() => props.onClick(parseInt(value))}
+        className="add-btn"
+      >
+        Add
+      </button>
+    </>
+  );
 }
 
 export default Input;
