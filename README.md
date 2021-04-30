@@ -10,4 +10,4 @@ Project is created with:
 * CSS
 
 ## Live
-kozdro.github.io/swapi/
+https://kozdro.github.io/swapi/
