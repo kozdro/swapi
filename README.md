@@ -9,9 +9,5 @@ Project is created with:
 * React (CRA)
 * CSS
 
-## Setup
-To run this project, download repo and run using npm:
-```
-$ git clone https://github.com/kozdro/swapi.git
-$ npm start
-```
+## Live
+kozdro.github.io/swapi/
