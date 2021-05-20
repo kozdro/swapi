@@ -4,6 +4,8 @@ An application thanks to which the user can see the available starships from Sta
 ## General info
 The application consists of one view in which the user can see the available models of starships and has the option of adding a selected number to the cart. The application was written using the SWAPI.
 
+Will be updated.
+
 ## Technologies
 Project is created with:
 * React (CRA)
